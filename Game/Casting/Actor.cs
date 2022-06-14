@@ -77,6 +77,7 @@ namespace Unit05.Game.Casting
         /// </summary>
         public virtual void MoveNext()
         {
+            //See how far can go
             int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
             int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
             position = new Point(x, y);

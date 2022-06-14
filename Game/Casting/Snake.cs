@@ -66,6 +66,7 @@ namespace Unit05.Game.Casting
                 segment.SetText("#");
                 segment.SetColor(Constants.GREEN);
                 segments.Add(segment);
+                //positions and sets up each section
             }
         }
 
@@ -77,6 +78,7 @@ namespace Unit05.Game.Casting
                 segment.MoveNext();
             }
 
+            //move to next section
             for (int i = segments.Count - 1; i > 0; i--)
             {
                 Actor trailing = segments[i];

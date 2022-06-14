@@ -37,6 +37,7 @@ namespace Unit05.Game.Casting
         /// </summary>
         public void Reset()
         {
+            //put to next position
             Random random = new Random();
             points = random.Next(9);
             int x = random.Next(Constants.COLUMNS);

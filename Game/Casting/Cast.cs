@@ -28,11 +28,13 @@ namespace Unit05.Game.Casting
         /// <param name="actor">The actor to add.</param>
         public void AddActor(string group, Actor actor)
         {
+            //if not a group, make group
             if (!actors.ContainsKey(group))
             {
                 actors[group] = new List<Actor>();
             }
 
+            //if group doesn't have actor --> add it (Maybe add 2nd snake here?)
             if (!actors[group].Contains(actor))
             {
                 actors[group].Add(actor);
