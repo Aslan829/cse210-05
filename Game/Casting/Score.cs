@@ -1,6 +1,6 @@
 using System;
 
-
+//Detlete class?
 namespace Unit05.Game.Casting
 {
     /// <summary>

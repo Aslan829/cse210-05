@@ -53,6 +53,8 @@ namespace Unit05.Game.Scripting
                 score.AddPoints(points);
                 food.Reset();
             }
+
+           //Add section for 2nd snake 
         }
 
         /// <summary>
@@ -72,6 +74,7 @@ namespace Unit05.Game.Scripting
                     isGameOver = true;
                 }
             }
+            //Include 2nd snake here
         }
 
         private void HandleGameOver(Cast cast)

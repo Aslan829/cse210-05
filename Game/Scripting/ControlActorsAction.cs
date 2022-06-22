@@ -53,6 +53,8 @@ namespace Unit05.Game.Scripting
             Snake snake = (Snake)cast.GetFirstActor("snake");
             snake.TurnHead(direction);
 
+            //Maybe add 2nd direction instruction here. (Direction2, different lkji, new snake object)
+
         }
     }
 }
