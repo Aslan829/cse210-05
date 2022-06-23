@@ -43,6 +43,7 @@ namespace Unit05.Game.Scripting
         private void HandleFoodCollisions(Cast cast)
         {
             Snake snake = (Snake)cast.GetFirstActor("snake");
+            Snake2 snake2 = (Snake2)cast.GetFirstActor("snake2");
             Score score = (Score)cast.GetFirstActor("score");
             Food food = (Food)cast.GetFirstActor("food");
             
@@ -54,7 +55,15 @@ namespace Unit05.Game.Scripting
                 food.Reset();
             }
 
-           //Add section for 2nd snake 
+            //Collision for 2nd snake
+            if (snake2.GetHead().GetPosition().Equals(food.GetPosition()))
+            {
+                int points = food.GetPoints();
+                snake2.GrowTail(points); //function to grow tail
+                score.AddPoints(points);
+                food.Reset();
+            }
+           
         }
 
         /// <summary>
@@ -75,6 +84,18 @@ namespace Unit05.Game.Scripting
                 }
             }
             //Include 2nd snake here
+
+            Snake2 snake2 = (Snake2)cast.GetFirstActor("snake2");
+            Actor head2 = snake2.GetHead();
+            List<Actor> body2 = snake2.GetBody();
+
+            foreach (Actor segment in body2)
+            {
+                if (segment.GetPosition().Equals(head2.GetPosition()))
+                {
+                    isGameOver = true;
+                }
+            }
         }
 
         private void HandleGameOver(Cast cast)
